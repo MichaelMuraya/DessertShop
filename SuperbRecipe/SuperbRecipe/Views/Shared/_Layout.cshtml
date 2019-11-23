@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>    
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <link href="~/Content/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <h3>Delish </h3>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    @await Component.InvokeAsync("CategoryMenu")
+                    @*<li><a asp-controller="Dessert" asp-action="List">Desserts</a></li>*@
+                    @await Component.InvokeAsync("ShoppingCartSummary")
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <p class="lead">
+                    <img class="img-responsive" alt="SuperbRecipe" src="~/Delish/logo.jpg" />
+                </p>
+                <div class="span3">
+                    <h4>Delish :Your one stop shop for deliciousness!!</h4>
+                    <a href="/63523" target="ext">Our Story</a><br>
+                   
+                    <a href="https://www.google.com/maps/search/coffee+shop+near+me/"> Coffee shop</a><br>
+                    <a asp-controller="Contact" asp-action="Index">Make Special Orders</a><br>
+                    <a asp-controller="Contact" asp-action="Index">Contact Us</a><br>
+                    <a asp-controller="Order" asp-action="Checkout"> For Prospective Partners</a><br>
+                    <a asp-controller="Contact" asp-action="Index">For Investors</a><br>
+           </div>
+            </div>
+            <div class="col-md-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</body>
+</html>

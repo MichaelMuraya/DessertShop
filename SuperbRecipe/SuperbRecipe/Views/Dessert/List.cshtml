@@ -1,0 +1,9 @@
+﻿@model DessertListViewModel
+
+
+
+<h1>@Model.CurrentCategory</h1>
+@foreach (var dessert in Model.Desserts)
+{
+<partial name="_DessertCard" model="dessert" />
+}

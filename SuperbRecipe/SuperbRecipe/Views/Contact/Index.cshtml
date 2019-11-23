@@ -1,0 +1,50 @@
+﻿@model SuperbRecipe.Models.Tag.EmailTagHelper
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+    <div>
+        <h4>Contact Details</h4><a href="delish.desserts@bakersite.com">delish.desserts@bakersite.com</a>
+        <hr />
+        <h4>Contact us.</h4>
+        <h4>Our email Address</h4>
+        
+        <form asp-action="Contact" method="post" class="form-horizontal" role="form">
+
+
+
+            <div class="form-group">
+                <label asp-for="Address" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                    <input asp-for="Address" class="form-control" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Content" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                    <input asp-for="Content" class="form-control" />
+                    <span asp-validation-for="Content" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Order" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                    <input asp-for="Order" class="form-control" />
+                    <span asp-validation-for="Order" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-5">
+                    <input type="submit" class="btn btn-primary" value="Submit" />
+                </div>
+            </div>
+
+        </form>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        <a asp-action="Index">Back to Home Page</a>
+    </div>

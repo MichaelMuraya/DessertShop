@@ -1,0 +1,12 @@
+﻿@model HomeViewModel
+
+<partial name="_Carousel" />
+<h2> Dessert of the Week</h2>
+<h2> The best selection from the Customers!!</h2>
+
+<div class="row">
+    @foreach (var dessert in Model.DessertOfWeek)
+    {
+        <partial name="_DessertCard" model="dessert" />
+    }
+</div>
